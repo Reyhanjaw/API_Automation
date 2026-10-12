@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit
+    testImplementation platform('org.junit:junit-bom:6.0.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Rest-assured
+    // Source: https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation 'io.rest-assured:rest-assured:6.0.1'
+
+    // Json
+    // Source: https://mvnrepository.com/artifact/org.json/json
+    testImplementation 'org.json:json:20260814'
+
+}
+
+test {
+    useJUnitPlatform()
+}
